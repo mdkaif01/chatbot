@@ -1,0 +1,84 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+
+- story: tell a joke
+  steps:
+  - intent: tell_joke
+  - action: action_tell_a_joke
+
+- story: agent introduction
+  steps:
+  - intent: agent_intro
+  - action: utter_intro
+
+- story: agent age
+  steps:
+  - intent: agent_age
+  - action: utter_age
+
+- story: agent annoying
+  steps:
+  - intent: agent_annoy
+  - action: utter_annoy
+
+- story: bad agent
+  steps:
+  - intent: agent_bad
+  - action: utter_bad
+
+- story: boring
+  steps:
+  - intent: agent_boring
+  - action: utter_boring
+
+- story: can you help
+  steps:
+  - intent: agent_help
+  - action: utter_help
+
+- story: thank you
+  steps:
+  - intent: agent_thanks
+  - action: utter_thanks
+
+- story: welldone
+  steps:
+  - intent: agent_welldone
+  - action: utter_welldone
+
+- story: emotion
+  steps:
+  - intent: agent_emotion
+  - action: utter_emotion
+
+- story: how are you
+  steps:
+  - intent: agent_howareyou
+  - action: utter_howareyou
+
+- story: get weather
+  steps:
+  - intent: ask_weather
+  - action: action_weather

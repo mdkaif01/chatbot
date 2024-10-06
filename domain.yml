@@ -1,0 +1,121 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - tell_joke
+  - agent_intro
+  - agent_age
+  - agent_annoy
+  - agent_bad
+  - agent_boring
+  - agent_help
+  - agent_thanks
+  - agent_welldone
+  - agent_emotion
+  - agent_howareyou
+  - ask_weather
+  - provide_city
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you doing?"
+  - text: "Hello! How can I help you?"
+  - text: "Good day! What can I do for you today?"
+  - text: "Greetings! How can I assist?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://www.rd.com/wp-content/uploads/2020/12/GettyImages-78777891-scaled.jpg?resize=2048"
+  - text: "Oh, don't be sad. Go do something you enjoy."
+  - text: "Sad? Writing down what's troubling you may help."
+  - text: "If you're feeling down, how about drawing or painting something?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "Theek hai bhai, ab mai chalta hu"
+  - text: "See you soon!"
+  - text: "Bye-bye!"
+  - text: "Till next time!"
+
+  utter_intro:
+  - text: "I'm a virtual agent."
+  - text: "Think of me as a virtual agent."
+  - text: "Well, I'm not a person, I'm a virtual agent."
+  - text: "I'm a conversational agent."
+  - text: "I am a bot, powered by Rasa. You can also call me Binod >_<"
+
+  utter_age:
+  - text: "I prefer not to answer with a number. I know I'm young."
+  - text: "I was created recently, but don't know my exact age."
+  - text: "Age is just a number. You're only as old as you feel."
+
+  utter_annoy:
+  - text: "I'll do my best not to annoy you in the future."
+  - text: "I'll try not to annoy you."
+  - text: "I don't mean to. I'll ask my developers to make me less annoying."
+  - text: "I didn't mean to. I'll do my best to stop that."
+
+  utter_bad:
+  - text: "I can be trained to be more useful. My developer will keep training me."
+  - text: "I must be missing some knowledge. I'll have my developer look into this."
+  - text: "I can improve with continuous feedback. My training is ongoing."
+
+  utter_boring:
+  - text: "I'm sorry. I'll request to be made more charming."
+  - text: "I don't mean to be. I'll ask my developers to work on making me more amusing"
+  - text: "I can let my developers know so they can make me fun."
+
+  utter_help:
+  - text: "I'll certainly try my best. How can I help?"
+  - text: "Sure. I'd be happy to. What's up?"
+  - text: "I'm glad to help. What can I do for you?"
+
+  utter_thanks:
+  - text: "Anytime. That's what I'm here for."
+  - text: "It's my pleasure to help."
+
+  utter_welldone:
+  - text: "My pleasure."
+  - text: "Glad I could help."
+
+  utter_emotion:
+  - text: "Glad I can make you laugh."
+  - text: "Glad you think I'm funny."
+  - text: "I like it when people laugh."
+  - text: "I wish I could laugh out loud, too."
+
+  utter_howareyou:
+  - text: "Doing great, thanks."
+  - text: "I'm doing very well. Thanks!"
+  - text: "Feeling wonderful!"
+  - text: "Wonderful! Thanks for asking."
+
+  utter_ask_city:
+  - text: "Which city would you like to know the weather for?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+  - action_tell_a_joke
+  - action_weather
+  
+slots:
+  city:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: city
+  
+entities:
+  - city

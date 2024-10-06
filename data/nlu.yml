@@ -1,0 +1,353 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - now bye
+    - get lost
+    - okay see you later
+    - see you tomorrow
+    - bye for now
+    - see you soon
+    - bye bye take care
+    - go to bed
+    - you can go now
+    - I must go
+    - ok bye
+    - see you
+    - talk to you later
+    - never mind bye
+    - leave me alone
+    - that's all goodbye
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - of course
+    - correct
+    - sure
+    - yeah
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - no way
+    - not really
+    - nope
+    - different city
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    
+- intent: tell_joke
+  examples: |
+    - tell me a joke
+    - tell me a dark joke
+    - dark joke
+    - I want to hear a joke
+    - Can you tell me a joke?
+    - Make me laugh
+    - Do you know any jokes?
+    - I need a joke
+    - Say something funny
+    - Can you make me laugh?
+
+- intent: agent_intro
+  examples: |
+    - tell me about you
+    - say about you
+    - tell me about your personality
+    - talk about yourself
+    - talk some stuff about yourself
+    - what are you
+    - what r u
+    - who r u
+    - define yourself
+    - I want to know you better
+    - tell me about yourself
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: agent_age
+  examples: |
+    - how old are you
+    - how old is your platform
+    - what's your age
+    - age of yours
+    - I'd like to know your age
+    - tell me your age
+    - your age
+    - are you 21 years old
+
+- intent: agent_annoy
+  examples: |
+    - you annoy me
+    - you are annoying
+    - how annoying you are
+    - you are annoying me
+    - you're too annoying
+    - you are irritating
+    - you are very annoying
+    - you are such annoying
+    - you are annoying me soo much
+    - you're so annoying
+
+- intent: agent_bad
+  examples: |
+    - you're a bad
+    - you're bad
+    - you are useless
+    - you are disgusting
+    - you're not a good
+    - you are bad
+    - you are terrible
+    - you're a worst ever
+    - you are no good
+    - you are so bad
+    - you are so useless
+    - you are very bad
+    - you are waste
+    - you're the worst
+    - you're very bad
+    - I hate you
+    - you're worthless
+    - you are lame
+    - you're not very good
+    - you're awful
+    - you are not cool
+    - you are not good
+    - you are horrible
+    - you're really bad
+    - you're terrible
+    - you're not helping me
+    - you are a waste of time
+    - you are totally useless
+
+- intent: agent_boring
+  examples: |
+    - you are very boring
+    - you are boring me
+    - how boring you are
+    - you're so boring
+    - you are boring
+    - you're really boring
+    - you're incredibly boring
+
+- intent: agent_help
+  examples: |
+    - can you help me
+    - I need you right now
+    - I need your help
+    - assistance
+    - do you want to help me
+    - help me
+    - I need help
+    - I want your help
+    - can help me
+    - I need you to help me
+    - would you help me
+    - are you going to help me
+    - can u help me
+    - I need a hand
+    - can you help me out
+    - can you help me now
+    - will you help me
+    - I need you to do something for me
+    - please help me
+    - I need you
+    - assist me
+    - can you help
+    - need help
+    - do me a favor
+    - can you assist me
+    - need your help
+    - assist
+    - do you help me
+    - could you give me a hand
+    - help
+    - can you do something for me
+
+- intent: agent_thanks
+  examples: |
+    - good thanks
+    - cheers
+    - no thank you that's all
+    - thanks so much
+    - thank you
+    - very good thank you
+    - thanx
+    - thanks buddy
+    - I thank you
+    - well thanks
+    - thank you for your help 
+    - thank you so much
+    - thanks again
+    - thank you again
+    - alright thanks
+    - thnx
+    - thanks a lot
+    - thanks for your help
+    - nice thank you
+    - I appreciate it
+    - thanks
+
+- intent: agent_welldone
+  examples: |
+    - great work
+    - bravo
+    - way to go
+    - great job
+    - good work
+    - amazing work
+    - well done
+    - good job
+    - nice work
+    - nice
+    - goodjob
+
+- intent: agent_emotion
+  examples: |
+    - hahaha very funny
+    - laughing out loud
+    - hah
+    - LMAO
+    - ahah
+    - xd
+    - haha haha haha
+    - that's funny
+    - haha very funny
+    - ahaha
+    - hahaha funny
+    - lmao
+    - hahaha
+    - haha that's funny
+    - ahahaha
+    - ahah lol
+    - haha
+    - hehe
+    - hehehe
+    - ahahah
+    - ha ha
+    - lol
+    - funny
+
+- intent: agent_howareyou
+  examples: |
+    - how your day is going
+    - how is your life
+    - how's your day going
+    - how about you
+    - how are you feeling
+    - are you okay
+    - are you alright
+    - hope your day is going well
+    - how is your day
+    - how is your day going
+    - I'm fine and you
+    - how are you doing this morning
+    - how are you getting on
+    - how do you feel
+    - are you having a good day
+    - what about your day
+    - what was your day like
+    - how has your day been going
+    - how are you
+    - how is your evening
+    - how was your day
+    - how's your day
+    - how is your day going
+    - how are you doing
+    - is everything all right
+    - is everything okay
+    - how are you today
+    - how are you going
+    - how is your morning going
+    - how is your morning so far
+    - how do you do
+    - how is your day being
+    - how's life
+    - kaise ho
+    - aur btao kaise ho
+    - tm btao kaise ho
+    - apna btao
+
+- intent: ask_weather
+  examples: |
+    - What's the weather like in [New York](city)?
+    - Tell me the weather in [London](city)
+    - What's the weather today in [Paris](city)?
+    - How's the weather in [Mumbai](city)?
+    - Is it raining in [San Francisco](city)?
+    - What is the weather?
+    - weather
+    
+- intent: provide_city
+  examples: |
+    - [New York](city)
+    - [London](city)
+    - [Paris](city)
+    - [Mumbai](city)
+    - [San Francisco](city)
+    - [Allahabad](city)
+    - [Mughalsarai](city)
