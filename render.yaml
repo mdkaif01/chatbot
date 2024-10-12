@@ -3,7 +3,7 @@ services:
   - type: web
     name: my-rasa-service
     env: python
-    plan: starter
+    plan: free
     buildCommand: pip install -r requirements.txt && rasa train
     startCommand: rasa run --enable-api --cors "*"
     env:
