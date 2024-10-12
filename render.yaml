@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: chatbot
+    env: python
+    buildCommand: pip install -r requirements.txt && rasa train
+    startCommand: rasa run --enable-api --cors "*"
+    # Optional: Specify the Python version
+    env:
+      PYTHON_VERSION: 3.7.9  # Set this to your desired Python version
