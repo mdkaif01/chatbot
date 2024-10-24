@@ -128,6 +128,7 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - what is your name?
 
 - intent: agent_age
   examples: |
@@ -351,3 +352,30 @@ nlu:
     - [San Francisco](city)
     - [Allahabad](city)
     - [Mughalsarai](city)
+    - [Varanasi](city)
+    - [Bhubaneswar](city)
+    - [Delhi](city)
+    - [Mirzapur](city)
+    - [Banaras](city)
+    - [Ajmer](city)
+    - [Agra](city)
+    - [Kanpur](city)
+    - [Gorakhpur](city)
+    - [Aligarh](city)
+    - [Bangalore](city)
+    - [Patna](city)
+    - [Lucknow](city)
+    - [Chennai](city)
+    - [Kolkata](city)
+    - [Chandigarh](city)
+    - [Noida](city)
+    - [Jhansi](city)
+    - [Muradabad](city)
+    - [Munger](city)
+    - [Ghazipur](city)
+    - [Mau](city)
+    - [Bhadohi](city)
+    - [Chandauli](city)
+    - [Bhopal](city)
+    - [Singrauli](city)
+    - [Indore](city)

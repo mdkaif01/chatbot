@@ -3,13 +3,48 @@ const sendButton = document.getElementById('send-button');
 const messagesContainer = document.getElementById('messages');
 const typingIndicator = document.getElementById('typing-indicator');
 const themeSwitch = document.getElementById('theme-switch');
+const helpButton = document.getElementById('help-button');
+const helpOverlay = document.getElementById('help-overlay');
+const closeHelpButton = document.getElementById('close-help');
 let isDarkMode = false;
+let userName = '';
+
+// Welcome message with personalized greeting
+window.onload = () => {
+    const hours = new Date().getHours();
+    let greeting = "Hello";
+
+    if (hours >= 0 && hours < 12) {
+        greeting = "Good Morning";
+    } else if (hours >= 12 && hours < 18) {
+        greeting = "Good Afternoon";
+    } else {
+        greeting = "Good Evening";
+    }
+
+    setTimeout(() => {
+        addMessage(`${greeting}! What's your name?`, "bot", true);
+    }, 500);
+};
 
 // Toggle dark mode
 themeSwitch.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     isDarkMode = !isDarkMode;
     themeSwitch.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
+});
+
+// Handle Help button click
+helpButton.addEventListener('click', () => {
+    helpOverlay.style.display = 'flex';
+    gsap.fromTo(helpOverlay, { opacity: 0 }, { opacity: 1, duration: 0.5 });
+});
+
+// Handle closing of Help overlay
+closeHelpButton.addEventListener('click', () => {
+    gsap.to(helpOverlay, { opacity: 0, duration: 0.5, onComplete: () => {
+        helpOverlay.style.display = 'none';
+    }});
 });
 
 sendButton.addEventListener('click', function() {
@@ -27,23 +62,33 @@ userInput.addEventListener('keypress', function(e) {
     }
 });
 
-function addMessage(text, sender) {
+function addMessage(text, sender, animate = false) {
     const messageDiv = document.createElement('div');
     messageDiv.classList.add('message', sender);
     messageDiv.innerText = text;
     messagesContainer.appendChild(messageDiv);
 
     // GSAP animation for messages
-    gsap.fromTo(messageDiv, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8 });
+    gsap.fromTo(messageDiv, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: animate ? 1.2 : 0.8 });
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
 function handleUserMessage(message) {
-    if (message.toLowerCase().includes("time")) {
-        fetchTime();
-    } else {
-        sendMessageToBot(message);
+    if (!userName) {
+        userName = message;
+        addMessage(`Nice to meet you, ${userName}! How can I help you today?`, 'bot');
+        return;
     }
+
+    showTypingIndicator();
+    setTimeout(() => {
+        if (message.toLowerCase().includes("time")) {
+            fetchTime();
+        } else {
+            sendMessageToBot(message);
+        }
+        hideTypingIndicator();
+    }, 1000); // Simulate bot delay
 }
 
 function fetchTime() {
@@ -85,4 +130,10 @@ function showTypingIndicator() {
 
 function hideTypingIndicator() {
     typingIndicator.style.display = 'none';
+}
+
+// Handle quick replies
+function handleQuickReply(message) {
+    addMessage(message, 'user');
+    handleUserMessage(message);
 }
